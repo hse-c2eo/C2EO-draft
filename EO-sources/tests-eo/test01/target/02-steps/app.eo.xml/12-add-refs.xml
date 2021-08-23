@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<program ms="268"
+         name="app.eo"
+         time="2021-08-23T05:09:11.890329Z"
+         version="0.1.19">
+   <listing>+package test01
++alias sprintf org.eolang.txt.sprintf
+
+[x] &gt; cover
+  x &gt; @
+
+cover 555 &gt; value
+
+[] &gt; app
+  sprintf &gt; @
+    "%d\n"
+    value
+
+&lt;EOF&gt;</listing>
+   <errors/>
+   <sheets>
+      <sheet>not-empty-atoms</sheet>
+      <sheet>middle-varargs</sheet>
+      <sheet>duplicate-names</sheet>
+      <sheet>many-free-attributes</sheet>
+      <sheet>broken-aliases</sheet>
+      <sheet>duplicate-aliases</sheet>
+      <sheet>one-body</sheet>
+      <sheet>same-line-names</sheet>
+      <sheet>self-naming</sheet>
+      <sheet>add-refs</sheet>
+      <sheet>wrap-method-calls</sheet>
+      <sheet>vars-float-up</sheet>
+      <sheet>add-refs</sheet>
+   </sheets>
+   <metas>
+      <meta line="1">
+         <head>package</head>
+         <tail>test01</tail>
+         <part>test01</part>
+      </meta>
+      <meta line="2">
+         <head>alias</head>
+         <tail>sprintf org.eolang.txt.sprintf</tail>
+         <part>sprintf</part>
+         <part>org.eolang.txt.sprintf</part>
+      </meta>
+   </metas>
+   <objects>
+      <o line="4" name="cover">
+         <o line="4" name="x"/>
+         <o base="x" line="5" name="@" ref="4"/>
+      </o>
+      <o base="cover" line="7" name="value" ref="4">
+         <o base="int" data="int" line="7">555</o>
+      </o>
+      <o line="9" name="app">
+         <o base="sprintf" line="10" name="@">
+            <o base="string" data="string" line="11">%d\n</o>
+            <o base="value" line="12" ref="7"/>
+         </o>
+      </o>
+   </objects>
+</program>

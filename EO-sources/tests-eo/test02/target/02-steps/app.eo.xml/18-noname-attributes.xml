@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<program ms="276"
+         name="app.eo"
+         time="2021-08-23T05:19:26.158835Z"
+         version="0.1.19">
+   <listing>+package test02
++alias stdout org.eolang.io.stdout
++alias sprintf org.eolang.txt.sprintf
+
+[x] &gt; cover
+  x &gt; @
+
+# cover 555 &gt; value
+
+[] &gt; app
+  cover 555 &gt; value
+
+  stdout &gt; @
+    sprintf
+      "%d\n"
+      value
+
+&lt;EOF&gt;</listing>
+   <errors/>
+   <sheets>
+      <sheet>not-empty-atoms</sheet>
+      <sheet>middle-varargs</sheet>
+      <sheet>duplicate-names</sheet>
+      <sheet>many-free-attributes</sheet>
+      <sheet>broken-aliases</sheet>
+      <sheet>duplicate-aliases</sheet>
+      <sheet>one-body</sheet>
+      <sheet>same-line-names</sheet>
+      <sheet>self-naming</sheet>
+      <sheet>add-refs</sheet>
+      <sheet>wrap-method-calls</sheet>
+      <sheet>vars-float-up</sheet>
+      <sheet>add-refs</sheet>
+      <sheet>resolve-aliases</sheet>
+      <sheet>resolve-aliases</sheet>
+      <sheet>add-default-package</sheet>
+      <sheet>broken-refs</sheet>
+      <sheet>unknown-names</sheet>
+      <sheet>noname-attributes</sheet>
+   </sheets>
+   <metas>
+      <meta line="1">
+         <head>package</head>
+         <tail>test02</tail>
+         <part>test02</part>
+      </meta>
+      <meta line="2">
+         <head>alias</head>
+         <tail>stdout org.eolang.io.stdout</tail>
+         <part>stdout</part>
+         <part>org.eolang.io.stdout</part>
+      </meta>
+      <meta line="3">
+         <head>alias</head>
+         <tail>sprintf org.eolang.txt.sprintf</tail>
+         <part>sprintf</part>
+         <part>org.eolang.txt.sprintf</part>
+      </meta>
+   </metas>
+   <objects>
+      <o line="5" name="cover">
+         <o line="5" name="x"/>
+         <o base="x" line="6" name="@" ref="5"/>
+      </o>
+      <o line="10" name="app">
+         <o base="cover" line="11" name="value" ref="5">
+            <o base="org.eolang.int" data="int" line="11">555</o>
+         </o>
+         <o base="org.eolang.io.stdout" line="13" name="@">
+            <o base="org.eolang.txt.sprintf" line="14">
+               <o base="org.eolang.string" data="string" line="15">%d\n</o>
+               <o base="value" line="16" ref="11"/>
+            </o>
+         </o>
+      </o>
+   </objects>
+</program>

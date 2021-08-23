@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<program ms="268"
+         name="app.eo"
+         time="2021-08-23T05:09:11.890329Z"
+         version="0.1.19">
+   <listing>+package test01
++alias sprintf org.eolang.txt.sprintf
+
+[x] &gt; cover
+  x &gt; @
+
+cover 555 &gt; value
+
+[] &gt; app
+  sprintf &gt; @
+    "%d\n"
+    value
+
+&lt;EOF&gt;</listing>
+   <errors/>
+   <sheets>
+      <sheet>not-empty-atoms</sheet>
+      <sheet>middle-varargs</sheet>
+      <sheet>duplicate-names</sheet>
+      <sheet>many-free-attributes</sheet>
+      <sheet>broken-aliases</sheet>
+      <sheet>duplicate-aliases</sheet>
+      <sheet>one-body</sheet>
+      <sheet>same-line-names</sheet>
+      <sheet>self-naming</sheet>
+      <sheet>add-refs</sheet>
+      <sheet>wrap-method-calls</sheet>
+      <sheet>vars-float-up</sheet>
+      <sheet>add-refs</sheet>
+      <sheet>resolve-aliases</sheet>
+      <sheet>resolve-aliases</sheet>
+      <sheet>add-default-package</sheet>
+      <sheet>broken-refs</sheet>
+      <sheet>unknown-names</sheet>
+      <sheet>noname-attributes</sheet>
+      <sheet>globals-to-abstracts</sheet>
+      <sheet>remove-refs</sheet>
+      <sheet>abstracts-float-up</sheet>
+      <sheet>remove-levels</sheet>
+      <sheet>add-refs</sheet>
+      <sheet>fix-missed-names</sheet>
+      <sheet>broken-refs</sheet>
+      <sheet>pre-classes</sheet>
+      <sheet>pre-junit</sheet>
+   </sheets>
+   <metas>
+      <meta line="1">
+         <head>package</head>
+         <tail>test01</tail>
+         <part>test01</part>
+      </meta>
+      <meta line="2">
+         <head>alias</head>
+         <tail>sprintf org.eolang.txt.sprintf</tail>
+         <part>sprintf</part>
+         <part>org.eolang.txt.sprintf</part>
+      </meta>
+   </metas>
+   <objects>
+      <class line="4" name="cover" original-name="cover">
+         <o line="4" name="x"/>
+         <o base="x" line="5" name="@" ref="4"/>
+      </class>
+      <class line="7" name="value" original-name="value">
+         <o base="cover" line="7" ref="4">
+            <o base="org.eolang.int" data="int" line="7">555</o>
+         </o>
+      </class>
+      <class line="9" name="app" original-name="app">
+         <o base="org.eolang.txt.sprintf" line="10" name="@">
+            <o base="org.eolang.string" data="string" line="11">%d\n</o>
+            <o base="value" line="12" ref="7"/>
+         </o>
+      </class>
+   </objects>
+</program>

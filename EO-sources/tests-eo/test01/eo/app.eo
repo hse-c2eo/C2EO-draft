@@ -1,0 +1,13 @@
++package test01
++alias sprintf org.eolang.txt.sprintf
+
+[x] > cover
+  x > @
+
+cover 555 > value
+
+[] > app
+  sprintf > @
+    "%d\n"
+    value
+
